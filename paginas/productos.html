@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Inflables Arco Iris</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+</head>
+<body>
+    <header>
+      <nav class="navbar navbar-expand-lg bg-warning">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Arco Iris</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link active" aria-current="page" href="../index.html">Inicio</a>
+              <a class="nav-link" href="../paginas/productos.html">Productos</a>
+              <a class="nav-link" href="../paginas/contactos.html">Contactos</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <h1>Productos</h1>
+    <div class="row row-cols-1 row-cols-md-3 g-4 contenedor">
+        <div class="col">
+          <div class="card h-100">
+            <img src="../imagenes/download.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Variedad de juegos</h5>
+              <p class="card.title">Gran surtido de juegos de mesas para todas las edades.</p>
+            </div>
+            <div class="card-footer">
+              <button type="button" class="btn btn-outline-warning">Elegir
+                <select name="variedadJuegos" id="variedadJuegos"></select>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <img src="../imagenes/Peloterito-y-auto.jpg"class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Plaza blanda</h5>
+              <p class="card-text">Hermosos y surtidos juegos para los mas pequeños, donde podran entretenerse con seguridad.</p>
+            </div>
+            <div class="card-footer">
+              <button type="button" class="btn btn-outline-success">Elegir
+                <select name="plazaBlanda" id="plazaBlanda"></select>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <img src="../imagenes/tobogan.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Inflables</h5>
+              <p class="card-text">Inflables para todas las edades y tamaño.  Tambien temático donde todos podran divertise.</p>
+            </div>
+            <div class="card-footer">
+              <button type="button" class="btn btn-outline-danger">Elegir
+                <select name="inflables" id="inflables"></select>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section class="bloque">
+        <div class="bloque_description">
+          <h3>Inflables</h3>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. At deserunt iste molestias? Hic nostrum doloremque deleniti, maiores aspernatur maxime iure magni repudiandae doloribus</p>
+        </div>
+        <div class="bloque_description">
+          <h3>Inflables Gigantes</h3>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. At deserunt iste molestias? Hic nostrum doloremque deleniti, maiores aspernatur maxime iure magni repudiandae doloribus.</p>
+      </div>
+      <div class="bloque_description">
+        <h3>Inflables de Agua</h3>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. At deserunt iste molestias? Hic nostrum doloremque deleniti, maiores aspernatur maxime iure magni repudiandae doloribus</p>
+      </div>
+      </section>
+      <section class="d-flex justify-content-evenly contenedor">
+        <a class="fs-1 text-dark" href="https://facebook.com"><i class="bi bi-facebook"></i></a>
+        <a class="fs-1 text-dark" href="https://instagram.com"><i class="bi bi-instagram"></i></a>
+        <a class="fs-1 text-dark" href="https://twitter.com"><i class="bi bi-twitter"></i></a>
+      </section>
+    </main>
+    <footer class="contenedor">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <h5>Horarios de atención</h5>
+            <p class="h6"> De martes a sábado de 9 a 18hs</p>
+          </div>
+          <div class="col">
+            <h5>Medios de pago</h5>
+            <p class="h6">Efectivo - transferencia - Mercado pago</p>
+          </div>
+          <div class="col">
+            <h5>Comunicate con Arco Iris al</h5>
+            <p class="h6">15-5555-0000</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div class="position-fixed bottom-0 end-0 mb-5 me-4">
+      <img src="https://cdn.iconscout.com/icon/free/png-512/whatsapp-circle-1868968-1583132.png" alt="whatsapp" width="60" height="60">
+    </div>
+    <script src="../productos.js"></script>
+</body>
+</html>

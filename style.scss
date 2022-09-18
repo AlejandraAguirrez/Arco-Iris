@@ -1,0 +1,38 @@
+//variables
+$margenes: 60px;
+$color: #66ff00;
+
+h1 {
+    color: $color;
+    font-family: cursive;
+    text-align: center;
+}
+
+.contenedor {
+    margin: $margenes;
+}
+
+.bloque {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+
+    &_description {
+        margin-top: $margenes;
+        padding: 10px;
+        border-radius: 46px;
+        background: $color;
+        box-shadow: inset -22px -22px 71px #3d9900,
+                    inset 22px 22px 71px #8fff00;
+                    text-align: center;
+                    font-family: cursive;
+    }
+}
+
+@media (max-width: 780px) {
+    .bloque {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+}   
+}

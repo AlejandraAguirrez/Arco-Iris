@@ -1,0 +1,22 @@
+{
+  "name": "inflables-alejandra-aguirre",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "node-sass --include.path sass style.scss style.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlejandraAguirrez/Inflables-Aguirre.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlejandraAguirrez/Inflables-Aguirre/issues"
+  },
+  "homepage": "https://github.com/AlejandraAguirrez/Inflables-Aguirre#readme",
+  "devDependencies": {
+    "node-sass": "^7.0.1"
+  }
+}

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Inflables Arco Iris</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"/>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+        <link rel="stylesheet" href="../style.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+    </head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-warning">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">Arco Iris</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav">
+                <a class="nav-link active" aria-current="page" href="../index.html">Inicio</a>
+                <a class="nav-link" href="../paginas/productos.html">Productos</a>
+                <a class="nav-link" href="../paginas/contactos.html">Contactos</a>
+              </div>
+            </div>
+          </div>
+        </nav>
+  </header>
+  <main>
+    <h1>Contactos</h1>
+  <h4 class="h5 fw-semibold fst-italic fs-5">Podes comunicarte al:</h4>
+
+  <div class="mb-3 row">
+    <label for="staticEmail" class="col-sm-2 col-form-label">Teléfono:</label>
+    <div class="col-sm-10">
+      <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="11-555-1234">
+    </div>
+
+  <div class="mb-3 row">
+    <label for="staticEmail" class="col-sm-2 col-form-label">Correo:</label>
+    <div class="col-sm-10">
+      <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="infarcoiris@gmail.com">
+    </div>
+ 
+  <h3 class="h5 fw-semibold fst-italic fs- datos">Completar los siguientes datos para reservar:</h3>
+  <form action="post" method="post" class="form">
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Nombre</label>
+      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="escribe tu nombre...">
+    </div>
+  
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Correo</label>
+      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="escribe tu email...">
+    </div>
+   
+    <div class="mb-3">
+      <label for="exampleFormControlTextarea1" class="form-label">Escribe tu consulta:</label>
+      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div>
+
+    <!-- <form> -->
+    <div class="mb-3 form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Suscripción Newsletter</label>
+    </div>
+    <button type="submit" class="btn btn-danger">Enviar</button>
+    <input class="btn btn-danger" type="reset" value="Limpiar">
+  </form>
+  <section class="d-flex justify-content-evenly contenedor">
+    <a class="fs-1 text-dark" href="https://facebook.com"><i class="bi bi-facebook"></i></a>
+    <a class="fs-1 text-dark" href="https://instagram.com"><i class="bi bi-instagram"></i></a>
+    <a class="fs-1 text-dark" href="https://twitter.com"><i class="bi bi-twitter"></i></a>
+  </section>
+  </main>
+  <footer class="contenedor">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h5>Horarios de atención</h5>
+          <p class="h6"> De martes a sábado de 9 a 18hs</p>
+        </div>
+        <div class="col">
+          <h5>Medios de pago</h5>
+          <p class="h6">Efectivo - transferencia - Mercado pago</p>
+        </div>
+        <div class="col">
+          <h5>Comunicate con Arco Iris al</h5>
+          <p class="h6">15-5555-0000</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <div class="position-fixed bottom-0 end-0 mb-5 me-4">
+      <img src="https://cdn.iconscout.com/icon/free/png-512/whatsapp-circle-1868968-1583132.png" alt="whatsapp" width="60" height="60">
+    </div>
+    <script src="contactos.js"></script>
+</body>
+</html>
