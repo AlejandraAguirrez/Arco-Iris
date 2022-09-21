@@ -38,42 +38,26 @@
       <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="11-555-1234">
     </div>
 
-  <div class="mb-3 row">
     <label for="staticEmail" class="col-sm-2 col-form-label">Correo:</label>
     <div class="col-sm-10">
       <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="infarcoiris@gmail.com">
     </div>
- 
-  <h3 class="h5 fw-semibold fst-italic fs- datos">Completar los siguientes datos para reservar:</h3>
-  <form action="post" method="post" class="form">
-    <div class="mb-3">
-      <label for="exampleFormControlInput1" class="form-label">Nombre</label>
-      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="escribe tu nombre...">
-    </div>
-  
-    <div class="mb-3">
-      <label for="exampleFormControlInput1" class="form-label">Correo</label>
-      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="escribe tu email...">
-    </div>
-   
-    <div class="mb-3">
-      <label for="exampleFormControlTextarea1" class="form-label">Escribe tu consulta:</label>
-      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-    </div>
+  </div>
 
-    <!-- <form> -->
-    <div class="mb-3 form-check">
-      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-      <label class="form-check-label" for="exampleCheck1">Suscripción Newsletter</label>
-    </div>
+  <h3 class="h5 fw-semibold fst-italic fs-5" id="datos">Completar los siguientes datos para reservar:</h3>
+  <form action="post" method="post" class="mb-3" id="form">
+      <input type="text" name="name" class="form-control" id="exampleFormControlInput1" placeholder="escribe tu nombre...">
+      <input type="text" name="lastname" class="form-control" id="exampleFormControlInput1" placeholder="escribe tu apellido...">
+      <input type="email" name="email" class="form-control" id="exampleFormControlInput1" placeholder="escribe tu email...">
     <button type="submit" class="btn btn-danger">Enviar</button>
-    <input class="btn btn-danger" type="reset" value="Limpiar">
+    <input  type="reset" class="btn btn-danger" value="Limpiar">
   </form>
+
   <section class="d-flex justify-content-evenly contenedor">
     <a class="fs-1 text-dark" href="https://facebook.com"><i class="bi bi-facebook"></i></a>
     <a class="fs-1 text-dark" href="https://instagram.com"><i class="bi bi-instagram"></i></a>
     <a class="fs-1 text-dark" href="https://twitter.com"><i class="bi bi-twitter"></i></a>
-  </section>
+  </section> 
   </main>
   <footer class="contenedor">
     <div class="container">
@@ -94,8 +78,8 @@
     </div>
   </footer>
   <div class="position-fixed bottom-0 end-0 mb-5 me-4">
-      <img src="https://cdn.iconscout.com/icon/free/png-512/whatsapp-circle-1868968-1583132.png" alt="whatsapp" width="60" height="60">
+      <img src="https://cdn.iconscout.com/icon/free/png-512/whatsapp-circle-1868968-1583132.png" alt="whatsapp" width="60" height="60"/>
     </div>
-    <script src="contactos.js"></script>
+    <script src="../contactos.js"></script>
 </body>
 </html>
