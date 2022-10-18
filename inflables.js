@@ -1,64 +1,97 @@
-let juegosVarios = []
-let carrito = []
+//PAGINA INICIO CARD: VARIEDAD DE JUEGOS
 
-const juegosVariosCard = document.getElementById('juegosVarios')
+let variedadJuegos = []
+const juegosCard= document.getElementById('variedadJuegos')
 
-class juegosPlazaInflables{
-    constructor(nombre, precio, id){
+class juegosVariedad{
+    constructor(nombre, precio){
         this.nombre = nombre
         this.precio = precio
-        this.id = id
 } 
 }
 
-let metegol = new juegosPlazaInflables('metegol', 3700, 0)
-let sapo = new juegosPlazaInflables('sapo', 4500, 1)
-let arcade = new juegosPlazaInflables('arcade', 8500, 2)
+let metegol = new juegosVariedad('metegol', 3700)
+let sapo = new juegosVariedad('sapo', 4500)
+let arcade = new juegosVariedad('arcade', 8500)
 
-let tobogan = new juegosPlazaInflables('tobogan', 3500, 3)
-let saltarin = new juegosPlazaInflables('saltarin', 2600, 4)
-let circuito = new juegosPlazaInflables('circuito', 7500, 5)
+variedadJuegos.push(metegol)
+variedadJuegos.push(sapo)
+variedadJuegos.push(arcade)
 
-let castillo = new juegosPlazaInflables('castillo', 8000, 6)
-let ring = new juegosPlazaInflables('ring',12000, 7)
-let barco = new juegosPlazaInflables('barco', 13500, 8)
-
-juegosVarios.push(metegol)
-juegosVarios.push(sapo)
-juegosVarios.push(arcade)
-juegosVarios.push(tobogan)
-juegosVarios.push(saltarin)
-juegosVarios.push(circuito)
-juegosVarios.push(castillo)
-juegosVarios.push(ring)
-juegosVarios.push(barco)
-
-juegosVarios.forEach(juegosPlazaInflables=>{
+variedadJuegos.forEach(juegosVariedad=>{
     const option = document.createElement('option')
-    option.innerText = `${juegosPlazaInflables.nombre}: $${juegosPlazaInflables.precio}`
-    juegosVariosCard.append(option)
+    option.innerText = `${juegosVariedad.nombre}: $${juegosVariedad.precio}`
+    juegosCard.append(option)
 })
 
-const botonCarrito = document.createElement('button')
-botonCarrito.innerText = 'Agregar producto'
-document.body.append(botonCarrito)
+//PAGINA iNICIO CARD: PLAZA BLANDA
 
-const botonAlquilar = document.createElement('button')
-botonAlquilar.innerText = 'Alquilar'
-document.body.append(botonAlquilar)
+let plazaBlanda = []
+const plazaCard= document.getElementById('plazaBlanda')
 
-botonCarrito.onclick = () =>{
-    const eleccion = juegosVarios[juegosVariosCard.selectedIndex]
-    console.log(eleccion)
-    carrito.push(eleccion)
-    console.log(carrito.length)
+class plaza{
+    constructor(nombre, precio){
+        this.nombre = nombre
+        this.precio = precio
+} 
 }
 
-botonAlquilar.onclick = () =>{
-    console.log(carrito)
-    let totalAlquiler = 0
-    carrito.forEach((juegosVarios)=>{
-    totalAlquiler = totalAlquiler + juegosVarios.precio
+let tobogan = new plaza('tobogan', 3500)
+let saltarin = new plaza('saltarin', 2600)
+let circuito = new plaza('circuito', 7500)
+
+plazaBlanda.push(tobogan)
+plazaBlanda.push(saltarin)
+plazaBlanda.push(circuito)
+
+plazaBlanda.forEach(plaza=>{
+    const option = document.createElement('option')
+    option.innerText = `${plaza.nombre}: $${plaza.precio}`
+    plazaCard.append(option)
+})
+
+//PAGINA INICIO  CARD: INFLABLES
+
+let inflables = []
+const inflablesCard= document.getElementById('inflables')
+
+class inflable{
+    constructor(nombre, precio){
+        this.nombre = nombre
+        this.precio = precio
+} 
+}
+
+let castillo = new inflable('castillo', 8000)
+let ring = new inflable('ring',12000)
+let barco = new inflable('barco', 13500)
+
+inflables.push(castillo)
+inflables.push(ring)
+inflables.push(barco)
+
+inflables.forEach(inflable=>{
+    const option = document.createElement('option')
+    option.innerText = `${inflable.nombre}: $${inflable.precio}`
+    inflablesCard.append(option)
+})
+
+const btnConcurso = document.getElementById('btnConcurso')
+const lista = document.getElementById('lista')
+
+btnConcurso.onclick = () =>{
+     fetch('https://rickandmortyapi.com/api/character')
+    .then(response=>response.json())
+    .then(info=>{
+        const ganadores = info.results
+        ganadores.splice(5)
+        console.log(ganadores.length)
+        lista.innerHTML = ''
+        ganadores.forEach(ganador => {
+            const li = document.createElement('li')
+            li.innerHTML = `<h3>${ganador.name}</h3>
+                            <p>${ganador.species}</p>`
+        lista.append(li)
+        }) 
     })
-alert(`El total del alquiler es ${totalAlquiler}`) 
 }

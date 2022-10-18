@@ -1,80 +1,122 @@
-//PAGINA PRODUCTOS CARD: VARIEDAD DE JUEGOS
+const productos= []
+const carrito = []
 
-let variedadJuegos = []
-const juegosCard= document.getElementById('variedadJuegos')
+const contenedorCarrito = document.getElementById('carrito-contenedor')
+const listaCarrito = document.getElementById('carritoContenedor')
 
-class juegosVariedad{
-    constructor(nombre, precio){
+const botonVaciar = document.getElementById('vaciar-carrito')
+const contadorCarrito = document.getElementById('contadorCarrito')
+
+const cantidad = document.getElementById('cantidad')
+const precioTotal = document.getElementById('precioTotal')
+const cantidadTotal = document.getElementById('cantidadTotal')
+
+class Juegos{
+    constructor(id, nombre, precio, img) {
+        this.id = id
         this.nombre = nombre
         this.precio = precio
-} 
+        this.cantidad = 1
+        this.img = img
+    }
+    //creacion de cards
+    desplegarJuegos(){ 
+        const containerCard = `
+        <div class="containerCard">
+            <img src=${this.img} alt="">
+            <h4>${this.nombre}</h4>
+            <p>$${this.precio}</p>
+            <button id=${this.id} class="btnAgregar">Agregar🛒</button>
+            </div>
+            `
+            const container = document.getElementById('container')
+            container.innerHTML += containerCard
+    }
+    agregarCarrito(){
+        const agregar = document.getElementById(this.id)
+        const juegoElegido = productos.find(product => product.id == this.id)
+        agregar.addEventListener('click', () =>agregarAlCarrito(juegoElegido))
+    }
 }
 
-let metegol = new juegosVariedad('metegol', 3700)
-let sapo = new juegosVariedad('sapo', 4500)
-let arcade = new juegosVariedad('arcade', 8500)
+let juegosdeMesa = new Juegos( '0','Juego de Mesa', 3700, '../imagenes/juegos.jpg')
+let plaza= new Juegos( '1', 'Plaza', 18500, '../imagenes/peloterito-y-auto.jpg')
+let castillo = new Juegos( '2','Castillo', 8000, '../imagenes/castillos.jpg')
+let tobogan = new Juegos( '3','Tobogan', 23500, '../imagenes/tobogan.jpg')
+let plazaBlanda = new Juegos( '4','Plaza Blanda', 36500, '../imagenes/plazablanda.jpg')
+let tejo = new Juegos( '5','Tejo', 13500, '../imagenes/download.jpg')
 
-variedadJuegos.push(metegol)
-variedadJuegos.push(sapo)
-variedadJuegos.push(arcade)
+productos.push(juegosdeMesa, plaza, castillo, tobogan, plazaBlanda, tejo)
 
-variedadJuegos.forEach(juegosVariedad=>{
-    const option = document.createElement('option')
-    option.innerText = `${juegosVariedad.nombre}: $${juegosVariedad.precio}`
-    juegosCard.append(option)
+console.log(productos)
+
+productos.forEach(e => {
+    e.desplegarJuegos()
+})
+productos.forEach(e => {
+    e.agregarCarrito()
 })
 
-//PAGINA PRODUCTOS CARD: PLAZA BLANDA
+botonVaciar.addEventListener('click', () => {
+    carrito.length = 0
+    actualizarCarrito()
+})
 
-let plazaBlanda = []
-const plazaCard= document.getElementById('plazaBlanda')
+function agregarAlCarrito(producto) {
+    const enCarrito = carrito.find(prod => prod.id == producto.id)
+    if (!enCarrito) {
+        carrito.push({...producto, cantidad: 1})
+} else {
+    const carritoFiltrado = carrito.filter(prod => prod.id != producto.id)
+    carrito = [
+        ...carritoFiltrado,
+        { ...enCarrito, cantidad: enCarrito.cantidad + 1}
+    ]
+}
+actualizarCarrito()
+console.log(carrito)
+contador.innerHTML = carrito.reduce((acc, prod) => acc + prod.cantidad,0)
+}    
 
-class plaza{
-    constructor(nombre, precio){
-        this.nombre = nombre
-        this.precio = precio
-} 
+const actualizarCarrito = () => {
+    contenedorCarrito.innerHTML = "" 
+
+    //estructura de cada producto en el contenedor carrito
+    carrito.forEach((prod) => {
+        const div = document.createElement('div')
+        div.className = ('productoEnCarrito')
+        div.innerHTML = `
+        <p>${prod.nombre}</p>
+        <p>Precio:$${prod.precio}</p>
+        <p>Cantidad: <span id="cantidad">${prod.cantidad}</span></p>
+        <button onclick="eliminarDelCarrito(${prod.id})" class="boton-eliminar"><i class="fas fa-trash-alt"></i></button>
+        `
+        contenedorCarrito.appendChild(div)
+        
+        localStorage.setItem('carrito', JSON.stringify(carrito))
+    })
+  
+   contador.innerText = carrito.length //al vaciar carrito vuelve contador a 0
+    console.log(carrito)
+   precioTotal.innerText = carrito.reduce((acc, prod) => acc + prod.cantidad * prod.precio, 0)//muestra precio total 
+
+    
 }
 
-let tobogan = new plaza('tobogan', 3500)
-let saltarin = new plaza('saltarin', 2600)
-let circuito = new plaza('circuito', 7500)
+ const alquilar = document.getElementById('alquilar')
 
-plazaBlanda.push(tobogan)
-plazaBlanda.push(saltarin)
-plazaBlanda.push(circuito)
+ alquilar.onclick = () => {
+     let totalAlquiler = 0
+     carrito.forEach ((prod)=>{
+         totalAlquiler = totalAlquiler + prod.precio
+   })
 
-plazaBlanda.forEach(plaza=>{
-    const option = document.createElement('option')
-    option.innerText = `${plaza.nombre}: $${plaza.precio}`
-    plazaCard.append(option)
+    swal.fire({
+        title: 'El total del alquiler es de',
+        text:`${'$'+totalAlquiler}`,
+        timer:5000,
 })
-
-//PAGINA PRODUCTOS CARD: INFLABLES
-
-let inflables = []
-const inflablesCard= document.getElementById('inflables')
-
-class inflable{
-    constructor(nombre, precio){
-        this.nombre = nombre
-        this.precio = precio
-} 
 }
-
-let castillo = new inflable('castillo', 8000)
-let ring = new inflable('ring',12000)
-let barco = new inflable('barco', 13500)
-
-inflables.push(castillo)
-inflables.push(ring)
-inflables.push(barco)
-
-inflables.forEach(inflable=>{
-    const option = document.createElement('option')
-    option.innerText = `${inflable.nombre}: $${inflable.precio}`
-    inflablesCard.append(option)
-})
 
 
 

@@ -1,5 +1,5 @@
 const datos = document.getElementById('datos')
-const formulario = document.getElementById('form')
+const formulario = document.getElementById('form') 
 
 formulario.onsubmit = (event) => {
     event.preventDefault()
@@ -31,3 +31,5 @@ console.log ('lastname',apellido)
 if(nombre!=='' ||apellido!==''){
 datos.innerText = `Hola ${nombre} ${apellido}, Bienvenido a inflables Arco Iris!`
 }
+
+
